@@ -1,4 +1,4 @@
-FROM golang:1.22.2-alpine3.19
+FROM golang:1.22.3-alpine3.19
 
 RUN mkdir /app
 
@@ -28,7 +28,7 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN go get go-greeting-service
+RUN go get go-greeting-service-ts-installed
 
 # Build go program
 RUN CGO_ENABLED=0 GOOS=linux go build -o /greeting-service
